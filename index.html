@@ -1,37 +1,55 @@
 <html lang="zh-CN" data-trae-theme="light"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的第一个云端页面</title>
+<title>反应力测试 · GitHub Pages</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
   body {
     font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
-    min-height: 100vh;
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
     display: flex;
+    flex-direction: column;
+    transition: background-color 0.15s ease;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  }
+  body.waiting  { background: #c0392b; }
+  body.ready    { background: #27ae60; }
+  body.tooearly { background: #e67e22; }
+  body.result   { background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%); }
+
+  header {
+    padding: 20px 28px;
+    font-size: 14px;
+    opacity: 0.75;
+    display: flex;
+    justify-content: space-between;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-    color: #fff;
-  }
-  .card {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 48px 56px;
     text-align: center;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    padding: 0 20px;
   }
-  h1 { font-size: 32px; margin-bottom: 16px; letter-spacing: 2px; }
-  p  { font-size: 16px; line-height: 1.8; opacity: 0.9; }
-  .tag {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 6px 18px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.15);
-    font-size: 13px;
-    letter-spacing: 1px;
+  #title { font-size: 52px; font-weight: 700; letter-spacing: 2px; margin-bottom: 18px; }
+  #sub   { font-size: 19px; opacity: 0.9; line-height: 1.8; }
+  #stats {
+    display: flex;
+    gap: 40px;
+    padding: 18px 28px;
+    justify-content: center;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.18);
+  }
+  #stats b { font-size: 20px; margin-left: 6px; }
+  @media (max-width: 600px) {
+    #title { font-size: 34px; }
+    #stats { gap: 18px; font-size: 13px; width: 100%; }
   }
 </style>
 <style data-trae-edit-ui="true" id="trae-previewer-tools-styles">:root {
@@ -784,11 +802,22 @@
   user-select: none;
 }
 </style><style data-trae-pptx-captured-css="true">* { margin: 0px; padding: 0px; box-sizing: border-box; }
-body { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 100%); color: rgb(255, 255, 255); }
-.card { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 16px; padding: 48px 56px; text-align: center; backdrop-filter: blur(8px); box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 40px; }
-h1 { font-size: 32px; margin-bottom: 16px; letter-spacing: 2px; }
-p { font-size: 16px; line-height: 1.8; opacity: 0.9; }
-.tag { display: inline-block; margin-top: 20px; padding: 6px 18px; border-radius: 999px; background: rgba(255, 255, 255, 0.15); font-size: 13px; letter-spacing: 1px; }
+html, body { height: 100%; }
+body { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; color: rgb(255, 255, 255); user-select: none; cursor: pointer; display: flex; flex-direction: column; transition: background-color 0.15s; background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 100%); }
+body.waiting { background: rgb(192, 57, 43); }
+body.ready { background: rgb(39, 174, 96); }
+body.tooearly { background: rgb(230, 126, 34); }
+body.result { background: linear-gradient(135deg, rgb(75, 108, 183) 0%, rgb(24, 40, 72) 100%); }
+header { padding: 20px 28px; font-size: 14px; opacity: 0.75; display: flex; justify-content: space-between; }
+main { flex: 1 1 0%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0px 20px; }
+#title { font-size: 52px; font-weight: 700; letter-spacing: 2px; margin-bottom: 18px; }
+#sub { font-size: 19px; opacity: 0.9; line-height: 1.8; }
+#stats { display: flex; gap: 40px; padding: 18px 28px; justify-content: center; font-size: 15px; background: rgba(0, 0, 0, 0.18); }
+#stats b { font-size: 20px; margin-left: 6px; }
+@media (max-width: 600px) {
+  #title { font-size: 34px; }
+  #stats { gap: 18px; font-size: 13px; width: 100%; }
+}
 :root { --trae-layer-image-download: 89990; --trae-layer-browser-inspect-overlay: 90000; --trae-layer-browser-inspect-highlight: 90010; --trae-layer-browser-inspect-action: 90020; --trae-layer-text-selection-action: 90030; --trae-layer-edit-tooltip: 100095; }
 :root, [data-trae-theme="dark"] { --trae-bg-base-default: #171717; --trae-bg-menu: #222427; --trae-bg-overlay-l1: rgba(255, 255, 255, 0.04); --trae-bg-overlay-l2: rgba(255, 255, 255, 0.08); --trae-bg-overlay-l3: rgba(255, 255, 255, 0.12); --trae-bg-overlay-l4: rgba(255, 255, 255, 0.16); --trae-bg-invert: #f5f9fe; --trae-bg-invert-hover: #e8ecf0; --trae-bg-invert-active: #dce0e4; --trae-bg-invert-disabled: rgba(224, 226, 242, 0.12); --bg-bg-brand-disabled: rgba(75, 63, 227, 0.35); --bg-bg-brand-popup: rgba(106, 111, 255, 0.15); --trae-border-l1: #e0e2f217; --trae-border-l2: rgba(255, 255, 255, 0.12); --trae-border-l3: rgba(255, 255, 255, 0.08); --trae-border-neutral-l3: rgba(229, 229, 229, 0.20); --trae-border-brand: #6a6fff; --trae-text-default: #f5f9fe; --trae-text-default-hover: #f5f9fe; --trae-text-default-active: #f5f9fe; --trae-text-secondary: rgba(245, 249, 254, 0.5); --trae-text-tertiary: rgba(245, 249, 254, 0.4); --trae-text-disabled: #666b75; --trae-text-onaccent: #222427; --trae-icon-default: #f5f9fe; --trae-icon-secondary: rgba(245, 249, 254, 0.5); --trae-icon-brand: #6a6fff; --icon-icon-brand: var(--trae-icon-brand); --trae-icon-onaccent: #222427; --trae-status-success: #22c55e; --trae-status-primary: #3b82f6; --trae-status-primary-default: #387bff; --trae-status-primary-surface-l1: rgba(53, 121, 255, 0.18); --trae-status-success-default: #33c192; --trae-status-success-surface-l1: rgba(0, 165, 110, 0.18); --trae-status-error-default: #f65a5a; --trae-status-error-surface-l1: rgba(246, 70, 70, 0.18); --trae-annotation-marker-bg: #4b3fe3; --trae-annotation-marker-text: #ffffff; --trae-annotation-region-border: var(--trae-status-primary-default); --trae-region-outside-mask-bg: rgba(0, 0, 0, 0.32); --trae-panel-shadow: 0px 6px 24px -1px rgba(0, 0, 0, 0.16); --trae-floating-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2); --trae-shadow-elevation-50: 0 1px 2px -1px rgba(0, 0, 0, 0.45); --text-text-default: var(--trae-text-default); --text-text-onaccent: var(--trae-text-onaccent); --bg-bg-menu: var(--trae-bg-menu); --bg-bg-white: var(--trae-bg-menu); --bg-bg-invert: var(--trae-bg-invert); --bg-bg-invert-disabled: var(--trae-bg-invert-disabled); --bg-bg-overlay-l1: var(--trae-bg-overlay-l1); --bg-bg-overlay-l2: var(--trae-bg-overlay-l2); --bg-bg-overlay-l3: var(--trae-bg-overlay-l3); --border-border-neutral-l1: var(--trae-border-l1); --border-border-brand: var(--trae-border-brand); --border-border-brand-half: rgba(106, 111, 255, 0.4); --status-error-default: var(--trae-status-error-default); --status-error-surface-l1: var(--trae-status-error-surface-l1); --radius-radius-md-12: 12px; --spacers-spacer-0: 0; --spacers-spacer-6: 6px; }
 [data-trae-theme="light"] { --trae-bg-base-default: #fafafa; --trae-bg-menu: #ffffff; --trae-bg-overlay-l1: rgba(0, 0, 0, 0.04); --trae-bg-overlay-l2: rgba(0, 0, 0, 0.06); --trae-bg-overlay-l3: rgba(0, 0, 0, 0.08); --trae-bg-overlay-l4: rgba(0, 0, 0, 0.12); --trae-bg-invert: #1f2328; --trae-bg-invert-hover: #32383f; --trae-bg-invert-active: #444d56; --trae-bg-invert-disabled: rgba(115, 115, 115, 0.20); --bg-bg-brand-disabled: rgba(75, 63, 227, 0.22); --bg-bg-brand-popup: rgba(170, 183, 255, 0.36); --trae-border-l1: rgba(0, 0, 0, 0.1); --trae-border-l2: rgba(0, 0, 0, 0.12); --trae-border-l3: rgba(0, 0, 0, 0.08); --trae-border-neutral-l3: rgba(115, 115, 115, 0.36); --trae-border-brand: #4b3fe3; --trae-text-default: #1f2328; --trae-text-default-hover: #111214; --trae-text-default-active: #111214; --trae-text-secondary: rgba(31, 35, 40, 0.5); --trae-text-tertiary: rgba(31, 35, 40, 0.4); --trae-text-disabled: #a1a1a1; --trae-text-onaccent: #ffffff; --trae-icon-default: #1f2328; --trae-icon-secondary: rgba(31, 35, 40, 0.5); --trae-icon-brand: #4b3fe3; --icon-icon-brand: var(--trae-icon-brand); --trae-icon-onaccent: #ffffff; --trae-status-success: #22c55e; --trae-status-primary: #3b82f6; --trae-status-primary-default: #2f74ff; --trae-status-primary-surface-l1: rgba(47, 116, 255, 0.12); --trae-status-success-default: #15a877; --trae-status-success-surface-l1: rgba(64, 176, 139, 0.12); --trae-status-error-default: #e8463a; --trae-status-error-surface-l1: rgba(232, 70, 58, 0.12); --trae-annotation-marker-bg: #4b3fe3; --trae-annotation-marker-text: #ffffff; --trae-annotation-region-border: var(--trae-status-primary-default); --trae-region-outside-mask-bg: rgba(0, 0, 0, 0.18); --trae-panel-shadow: 0px 6px 24px -1px rgba(24, 24, 24, 0.06); --trae-floating-shadow: 0px 2px 8px 0px rgba(24, 24, 24, 0.2); --trae-shadow-elevation-50: 0 1px 2px -1px rgba(24, 24, 24, 0.08); --text-text-default: var(--trae-text-default); --text-text-onaccent: var(--trae-text-onaccent); --bg-bg-menu: var(--trae-bg-menu); --bg-bg-white: var(--trae-bg-menu); --bg-bg-invert: var(--trae-bg-invert); --bg-bg-invert-disabled: var(--trae-bg-invert-disabled); --bg-bg-overlay-l1: var(--trae-bg-overlay-l1); --bg-bg-overlay-l2: var(--trae-bg-overlay-l2); --bg-bg-overlay-l3: var(--trae-bg-overlay-l3); --border-border-neutral-l1: var(--trae-border-l1); --border-border-brand: var(--trae-border-brand); --border-border-brand-half: rgba(75, 63, 227, 0.4); --status-error-default: var(--trae-status-error-default); --status-error-surface-l1: var(--trae-status-error-surface-l1); --radius-radius-md-12: 12px; --spacers-spacer-0: 0; --spacers-spacer-6: 6px; }
@@ -890,12 +919,84 @@ p { font-size: 16px; line-height: 1.8; opacity: 0.9; }
 .trae-success-icon { display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; color: var(--trae-status-success); flex-shrink: 0; }
 .trae-success-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; color: var(--trae-text-default); user-select: none; }</style></head>
 <body>
-  <div class="card">
-    <h1>Hello, Cloud!</h1>
-    <p>这是部署在 GitHub Pages 上的第一个 Web 页面。</p>
-    <p>云计算与分布式系统 · 实验2 云环境下的服务器环境搭建</p>
-    <div class="tag">Powered by GitHub Pages</div>
+  <header>
+    <span>反应力测试 Reaction Test</span>
+    <span>云计算与分布式系统 · 实验2</span>
+  </header>
+  <main id="game">
+    <div id="title">点击任意处开始</div>
+    <div id="sub">页面变绿的瞬间，以最快速度点击屏幕<br>测量你的反应时间（毫秒）</div>
+  </main>
+  <div id="stats">
+    <span>本次<b id="cur">--</b></span>
+    <span>最佳纪录<b id="best">267 ms</b></span>
+    <span>平均(本局)<b id="avg">--</b></span>
   </div>
+
+<script>
+  const body = document.body;
+  const titleEl = document.getElementById('title');
+  const subEl = document.getElementById('sub');
+  const curEl = document.getElementById('cur');
+  const bestEl = document.getElementById('best');
+  const avgEl = document.getElementById('avg');
+
+  let state = 'idle';   // idle / waiting / ready / tooearly / result
+  let timer = null;
+  let startTime = 0;
+  let attempts = [];
+  let best = Number(localStorage.getItem('reaction_best')) || null;
+  if (best) bestEl.textContent = best + ' ms';
+
+  function evaluate(t) {
+    if (t < 200) return '神速！职业选手级别';
+    if (t < 250) return '非常快，超过大多数人';
+    if (t < 350) return '正常水平（普通人约 250~350ms）';
+    if (t < 500) return '偏慢，再来一次试试';
+    return '走神了吧？点击重试';
+  }
+
+  function updateStats(t) {
+    curEl.textContent = t + ' ms';
+    if (!best || t < best) {
+      best = t;
+      localStorage.setItem('reaction_best', best);
+      bestEl.textContent = best + ' ms';
+    }
+    const avg = Math.round(attempts.reduce((a, b) => a + b, 0) / attempts.length);
+    avgEl.textContent = avg + ' ms';
+  }
+
+  body.addEventListener('click', () => {
+    if (state === 'idle' || state === 'result' || state === 'tooearly') {
+      state = 'waiting';
+      body.className = 'waiting';
+      titleEl.textContent = '等待绿色…';
+      subEl.innerHTML = '页面即将变绿，变绿瞬间立刻点击！<br>（提前点击算失败）';
+      timer = setTimeout(() => {
+        state = 'ready';
+        body.className = 'ready';
+        startTime = performance.now();
+        titleEl.textContent = '点击！';
+        subEl.textContent = '现在！立刻点击屏幕任意处';
+      }, 1500 + Math.random() * 3000);
+    } else if (state === 'waiting') {
+      clearTimeout(timer);
+      state = 'tooearly';
+      body.className = 'tooearly';
+      titleEl.textContent = '太早了！';
+      subEl.textContent = '还没变绿就点了，点击任意处重新开始';
+    } else if (state === 'ready') {
+      const t = Math.round(performance.now() - startTime);
+      attempts.push(t);
+      updateStats(t);
+      state = 'result';
+      body.className = 'result';
+      titleEl.textContent = t + ' ms';
+      subEl.innerHTML = evaluate(t) + '<br>点击任意处再测一次';
+    }
+  });
+</script>
 
 
 <div data-trae-edit-ui="true" class="trae-image-download-btn" title="Download image" style="position: fixed; display: none; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; background: var(--trae-bg-menu, #222427); border: 1px solid var(--trae-border-l2, rgba(255,255,255,0.12)); box-shadow: var(--trae-floating-shadow, 0px 2px 8px 0px rgba(0,0,0,0.2)); color: var(--trae-icon-default, #f5f9fe); cursor: pointer; z-index: 89990; transition: background 0.15s; pointer-events: auto;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
